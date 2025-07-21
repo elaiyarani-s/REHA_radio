@@ -57,11 +57,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        {% if user.is_authenticated %}
           <li class="nav-item"><a class="nav-link" href="{% url 'stations_list' %}">Stations List</a></li>
-        {% else %}
-          <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
-        {% endif %}
         <li class="nav-item">
           <button id="themeToggle" class="btn btn-outline-light ms-2">🌓</button>
         </li>
