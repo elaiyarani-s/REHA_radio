@@ -1,0 +1,9 @@
+{
+  "appId": "com.reha.radioapp",
+  "appName": "Reha Radio",
+  "webDir": "dist",
+  "server": {
+    "url": "https://reha-radio.onrender.com",
+    "cleartext": false
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "1": {
+    "name": "90's Hits Radio - Vanavil FM",
+    "audio_url": "https://s7.yesstreaming.net:8062/stream",
+    "image_url": "/static/img/logos/vfm90.jpg",
+    "error_message": ""
+  },
+  "2": {
+    "name": "Big FM 92.7",
+    "audio_url": "https://radios.crabdance.com:8002/4",
+    "image_url": "/static/img/logos/bigfm.jpg",
+    "error_message": ""
+  },
+  "3": {
+    "name": "European Tamil Radio",
+    "audio_url": "https://bud.streampanel.net:6257/stream",
+    "image_url": "/static/img/logos/etr.png",
+    "error_message": ""
+  },
+  "4": {
+    "name": "FM Rainbow",
+    "audio_url": "https://air.pc.cdn.bitgravity.com/air/live/pbaudio022/media_114203.ts",
+    "image_url": "/static/img/logos/fmrainbow.jpg",
+    "error_message": ""
+  },
+  "5": {
+    "name": "Hello FM 106.4",
+    "audio_url": "https://radios.crabdance.com:8002/3",
+    "image_url": "/static/img/logos/hello.jpg",
+    "error_message": ""
+  },
+  "6": {
+    "name": "Ilayaraja FM",
+    "audio_url": "https://stream-161.zeno.fm/pwm9y3eud5zuv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJwd205eTNldWQ1enV2IiwiaG9zdCI6InN0cmVhbS0xNjEuemVuby5mbSIsInJ0dGwiOjUsImp0aSI6ImtvM0taRDhLVHcyR1A5blA5RW1aenciLCJpYXQiOjE3NTMwMjQyMTcsImV4cCI6MTc1MzAyNDI3N30.Dp0crfObcT1X3Ghh5I2xKZn8TGumGT1V-bSlObOQlEw",
+    "image_url": "/static/img/logos/ilayaraja.jpg",
+    "error_message": ""
+  },
+  "7": {
+    "name": "Lanka Sri FM",
+    "audio_url": "http://media2.lankasri.fm/;stream.mp3",
+    "image_url": "/static/img/logos/lankasri.png",
+    "error_message": ""
+  },
+  "8": {
+    "name": "Mano Radio",
+    "audio_url": "https://stream-158.zeno.fm/maokuvdskhnuv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJtYW9rdXZkc2tobnV2IiwiaG9zdCI6InN0cmVhbS0xNTguemVuby5mbSIsInJ0dGwiOjUsImp0aSI6Il9WcWxBV1JwVHpXWVdsNU1XTVNWMmciLCJpYXQiOjE3NTMwMjUyMzEsImV4cCI6MTc1MzAyNTI5MX0.1D_S6z3DJ-9HZHVcqTkgV8R-_MX7UTN6KV5av4N-vks",
+    "image_url": "/static/img/logos/mano.jpg",
+    "error_message": ""
+  },
+  "9": {
+    "name": "MGR Radio",
+    "audio_url": "https://stream-164.zeno.fm/0muspvd4138uv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiIwbXVzcHZkNDEzOHV2IiwiaG9zdCI6InN0cmVhbS0xNjQuemVuby5mbSIsInJ0dGwiOjUsImp0aSI6InRSQ1R4YW9CU251QTNJdWZlZ0dsSHciLCJpYXQiOjE3NTMwMjU0MDksImV4cCI6MTc1MzAyNTQ2OX0.eKGjNV2yVpz7Xx9ronegM-EpuxtYhBoRA8loYOu9tCE",
+    "image_url": "/static/img/logos/mgr.jpg",
+    "error_message": ""
+  },
+  "10": {
+    "name": "Radio City Live  91.1",
+    "audio_url": "https://radios.crabdance.com:8002/5",
+    "image_url": "/static/img/logos/radiocity.jpg",
+    "error_message": ""
+  },
+  "11": {
+    "name": "Radio Mirchi FM 98.3",
+    "audio_url": "https://radios.crabdance.com:8002/1",
+    "image_url": "/static/img/logos/mirchi.jpg",
+    "error_message": ""
+  },
+  "12": {
+    "name": "Shakthi FM",
+    "audio_url": "https://mbc.thestreamtech.com:8086/index.html/stream",
+    "image_url": "/static/img/logos/shakthi.png",
+    "error_message": ""
+  },
+  "13": {
+    "name": "Sivaji Radio",
+    "audio_url": "https://stream-169.zeno.fm/kq88hd71w0hvv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJrcTg4aGQ3MXcwaHZ2IiwiaG9zdCI6InN0cmVhbS0xNjkuemVuby5mbSIsInJ0dGwiOjUsImp0aSI6Ii1tcUxTSkJnU3N1T05EVG8zWjVlQUEiLCJpYXQiOjE3NTMwMjU1MDgsImV4cCI6MTc1MzAyNTU2OH0.8JXIWs59h_UBuyw2VNXzKrjpUQw1YzAy8GI22TQUOS4",
+    "image_url": "/static/img/logos/sivaji.jpg",
+    "error_message": ""
+  },
+  "14": {
+    "name": "Sooriyan FM",
+    "audio_url": "http://37.130.229.188:8040",
+    "image_url": "/static/img/logos/sooriyan.jpg",
+    "error_message": ""
+  },
+  "15": {
+    "name": "Star FM",
+    "audio_url": "http://s8.voscast.com:8670",
+    "image_url": "/static/img/logos/star.jpg",
+    "error_message": ""
+  },
+  "16": {
+    "name": "Suriyan FM",
+    "audio_url": "https://radios.crabdance.com:8002/2",
+    "image_url": "/static/img/logos/suryanradio.webp",
+    "error_message": ""
+  },
+  "17": {
+    "name": "Tamil FM",
+    "audio_url": "http://shaincast.caster.fm:47814/listen.mp3",
+    "image_url": "/static/img/logos/tamil.jpg",
+    "error_message": ""
+  },
+  "18": {
+    "name": "Tamil FM 89.4",
+    "audio_url": "https://centova.aarenworld.com/proxy/894tamilfm/stream",
+    "image_url": "/static/img/logos/tamil_89fm.jpg",
+    "error_message": ""
+  },
+  "19": {
+    "name": "Tamil Kuyil Radio",
+    "audio_url": "https://vobook.ru/http://live.tamilkuyilradio.com:8095/tamilkuyil",
+    "image_url": "/static/img/logos/tamil-kuji.png",
+    "error_message": ""
+  },
+  "20": {
+    "name": "Tamil Panpalai FM",
+    "audio_url": "https://tamilpanpalai.radioca.st/ind",
+    "image_url": "/static/img/logos/panpalai.png",
+    "error_message": ""
+  },
+  "21": {
+    "name": "TMS Radio",
+    "audio_url": "https://stream-178.zeno.fm/qvonezatdxytv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJxdm9uZXphdGR4eXR2IiwiaG9zdCI6InN0cmVhbS0xNzguemVuby5mbSIsInJ0dGwiOjUsImp0aSI6IjRwdlRHT1BGUlpXeU9mTzBPbVpWa1EiLCJpYXQiOjE3NTMwMjUzMjcsImV4cCI6MTc1MzAyNTM4N30.l4rEtALfeyIGsCzWzDdyQM-AGWyhoNLoyBGKbs8P82Q",
+    "image_url": "/static/img/logos/tms.jpg",
+    "error_message": ""
+  },
+  "22": {
+    "name": "Vaanam",
+    "audio_url": "https://sathees.radioca.st/;stream.mp3",
+    "image_url": "/static/img/logos/vaanam.jpg",
+    "error_message": ""
+  }
+}

@@ -1,0 +1,43 @@
+/* Card styling override */
+ .station-card {
+            transition: transform 0.2s ease;
+        }
+.station-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.station-card img {
+    height: 140px;
+    object-fit: contain;
+    padding: 10px;
+    background-color: #fafafa;
+}
+
+.station-name {
+    font-weight: 600;
+    color: #212529;
+    display: block;
+    margin-top: 10px;
+}
+
+.station-name:hover {
+    color: #007bff;
+}
+.station-detail-img {
+    max-height: 200px;
+    object-fit: contain;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border: 1px solid #dee2e6;
+}
+#now-playing-label {
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #6c757d;
+    margin-bottom: 1rem;
+}
+#stream-title {
+    font-size: 1rem;
+    font-style: italic;
+}
