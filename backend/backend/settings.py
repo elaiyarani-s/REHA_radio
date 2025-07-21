@@ -20,11 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
+DEBUG = config('DEBUG', default=False, cast=bool)
+
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY')
-DEBUG = config('DEBUG', default=False, cast=bool)
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 
@@ -42,9 +43,10 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "core",
-    "chatapp",
-    
+    "chatbox",
 ]
+
+ASGI_APPLICATION = 'backend.asgi.application'
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -77,19 +79,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "backend.wsgi.application"
 
-ASGI_APPLICATION = 'backend.asgi.application'
 
-CHANNEL_LAYERS = {
-    'default': {
-        'BACKEND': 'channels_redis.core.RedisChannelLayer',
-        'CONFIG': {
-            "hosts": [('127.0.0.1', 6379)],
-        },
-    },
-}
-
-STREAM_API_KEY = 'your-api-key'
-STREAM_API_SECRET = 'your-api-secret'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
