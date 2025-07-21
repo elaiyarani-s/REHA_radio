@@ -32,6 +32,9 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 # Application definition
 
 INSTALLED_APPS = [
+    "channels",
+    'corsheaders',
+    "daphne",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -39,7 +42,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "core",
-    'corsheaders',
+    "chatapp",
+    
 ]
 
 MIDDLEWARE = [
@@ -73,6 +77,19 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "backend.wsgi.application"
 
+ASGI_APPLICATION = 'backend.asgi.application'
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
+}
+
+STREAM_API_KEY = 'your-api-key'
+STREAM_API_SECRET = 'your-api-secret'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases

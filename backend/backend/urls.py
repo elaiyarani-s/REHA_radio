@@ -21,7 +21,10 @@ from core import views as core_views
 
 
 urlpatterns = [
-    path('', core_views.station_list_view, name='stations_list'),
+    path('', core_views.index, name='index'),
+    path('about/', core_views.about, name='about'),
+    path('stations/', core_views.station_list_view, name='stations_list'),
     path('station/<int:station_id>/', core_views.station_detail_view, name='station_detail'),
 ]
+
 
