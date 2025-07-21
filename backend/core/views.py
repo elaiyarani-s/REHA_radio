@@ -20,7 +20,7 @@ def station_detail_view(request, station_id):
     return render(request, 'core/station_detail.html', {'station': station})
 
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'index.html')
 
 
 def about(request):
