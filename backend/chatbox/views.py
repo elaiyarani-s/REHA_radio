@@ -23,12 +23,12 @@ def lobby(request: HttpRequest) -> HttpResponse:
 
         return redirect('chat')
     else:
-        return render(request, 'lobby.html')
+        return render(request, 'chatbox/lobby.html')
 
 def chat(request: HttpRequest) -> HttpResponse:
     if not request.session.get('username'):
         return redirect('lobby')
-    return render(request, 'chat.html')
+    return render(request, 'chatbox/chat.html')
 
 def create_message(request: HttpRequest) -> HttpResponse:
     content = request.POST.get("content")

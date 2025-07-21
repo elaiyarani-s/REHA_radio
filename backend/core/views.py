@@ -10,11 +10,18 @@ def load_stations():
 
 def station_list_view(request):
     stations = load_stations()
-    return render(request, 'stations_list.html', {'stations': stations})
+    return render(request, 'core/stations_list.html', {'stations': stations})
 
 def station_detail_view(request, station_id):
     stations = load_stations()
     station = stations.get(str(station_id))
     if not station:
         return redirect('station_list')
-    return render(request, 'station_detail.html', {'station': station})
+    return render(request, 'core/station_detail.html', {'station': station})
+
+def home(request):
+    return render(request, 'home.html')
+
+
+def about(request):
+    return render(request, 'about.html')
