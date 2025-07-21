@@ -15,7 +15,7 @@
   const input = document.getElementById('message-input');
 
   // Streaming messages
-  const eventSource = new EventSource("{% url 'stream_chat' %}");
+  const eventSource = new EventSource("{% url 'stream-chat-messages' %}");
   eventSource.onmessage = function (e) {
     const data = JSON.parse(e.data);
     const messageHTML = `<div><strong>${data.author__name}:</strong> ${data.content}</div>`;

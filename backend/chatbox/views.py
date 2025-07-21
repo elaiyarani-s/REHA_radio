@@ -25,14 +25,14 @@ def lobby(request: HttpRequest) -> HttpResponse:
         return redirect('chat')
 
     # Only render partial layout (no <html><head> etc.)
-    return render(request, 'chatbox/lobby.html')  # assuming it's already stripped of HTML boilerplate
+    return render(request, 'lobby.html')  # assuming it's already stripped of HTML boilerplate
 
 
 def chat(request: HttpRequest) -> HttpResponse:
     if not request.session.get('username'):
         return redirect('lobby')
 
-    return render(request, 'chatbox/chat.html')  # should be a partial template (minimal markup)
+    return render(request, 'chat.html')  # should be a partial template (minimal markup)
 
 
 def create_message(request: HttpRequest) -> HttpResponse:
