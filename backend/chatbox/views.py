@@ -8,6 +8,7 @@ from . import models
 import json
 import random
 
+
 def lobby(request: HttpRequest) -> HttpResponse:
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -22,13 +23,17 @@ def lobby(request: HttpRequest) -> HttpResponse:
             request.session['username'] = f"{random.choice(names)}-{hash(datetime.now().timestamp())}"
 
         return redirect('chat')
-    else:
-        return render(request, 'chatbox/lobby.html')
+
+    # Only render partial layout (no <html><head> etc.)
+    return render(request, 'chatbox/lobby.html')  # assuming it's already stripped of HTML boilerplate
+
 
 def chat(request: HttpRequest) -> HttpResponse:
     if not request.session.get('username'):
         return redirect('lobby')
-    return render(request, 'chatbox/chat.html')
+
+    return render(request, 'chatbox/chat.html')  # should be a partial template (minimal markup)
+
 
 def create_message(request: HttpRequest) -> HttpResponse:
     content = request.POST.get("content")
