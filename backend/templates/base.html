@@ -132,60 +132,16 @@
     <script src="{% static 'js/theme.js' %}"></script>
 
     <script>
-      const chatToggleBtn = document.getElementById('chat-toggle-btn');
-      const chatWidget = document.getElementById('chat-widget');
+      document.addEventListener("DOMContentLoaded", function () {
+        const chatToggleBtn = document.getElementById("chat-toggle-btn");
+        const chatWidget = document.getElementById("chat-widget");
 
-      chatToggleBtn.addEventListener('click', () => {
-        const isVisible = chatWidget.style.display === 'block';
-        chatWidget.style.display = isVisible ? 'none' : 'block';
-      });
-      let nickname = localStorage.getItem("nickname");
-      if (!nickname) {
-        nickname = prompt("Enter a nickname (anonymous):") || "Anonymous";
-        localStorage.setItem("nickname", nickname);
-      }
-
-      const chatSocket = new WebSocket(
-        (window.location.protocol === "https:" ? "wss://" : "ws://") +
-          window.location.host +
-          "/ws/chat/"
-      );
-
-      chatSocket.onmessage = function (e) {
-        const data = JSON.parse(e.data);
-        const chatLog = document.querySelector("#chat-log");
-        chatLog.innerHTML += `
-          <div class="mb-1">
-            <small class="text-muted">[${data.timestamp}]</small> 
-            <strong style="color:${data.color};">${data.nickname}</strong>: 
-            <span>${data.message}</span>
-          </div>
-        `;
-        chatLog.scrollTop = chatLog.scrollHeight;
-      };
-
-      document.querySelector("#chat-message-submit").onclick = function () {
-        const inputField = document.querySelector("#chat-message-input");
-        const message = inputField.value;
-        if (message.trim()) {
-          chatSocket.send(
-            JSON.stringify({
-              message: message,
-              nickname: nickname,
-            })
-          );
-          inputField.value = "";
+        if (chatToggleBtn && chatWidget) {
+          chatToggleBtn.addEventListener("click", function () {
+            chatWidget.style.display = (chatWidget.style.display === "none") ? "block" : "none";
+          });
         }
-      };
-
-      document
-        .querySelector("#chat-message-input")
-        .addEventListener("keypress", function (e) {
-          if (e.key === "Enter") {
-            document.querySelector("#chat-message-submit").click();
-          }
-        });
-    </script>
-    
+      });
+    </script>    
   </body>
 </html>
