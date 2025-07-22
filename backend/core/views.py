@@ -19,8 +19,8 @@ def station_detail_view(request, station_id):
         return redirect('station_list')
     return render(request, 'core/station_detail.html', {'station': station})
 
-def home(request):
-    return render(request, 'index.html')
+# def home(request):
+#     return render(request, 'index.html')
 
 
 def about(request):

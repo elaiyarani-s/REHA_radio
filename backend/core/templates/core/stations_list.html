@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
-{% block content %}
 {% load static %}
+
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -12,14 +13,23 @@
         <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     </head>
     <body>
-        <header class="bg-light py-3 mb-4" style="border-bottom: 2px solid #a2d2ff;">
-            <div class="container d-flex justify-content-between align-items-center">
-                <a href="{% url 'stations_list' %}" class="d-flex align-items-center text-decoration-none">
-                <img src="{% static 'img/logos/REHA.jpg' %}" alt="REHA Logo" width="50" height="30" class="me-2" style="background-color: transparent;">
-                <span class="h5 mb-0" style="color: #040405ff;">REHA Radio</span>
-                </a>
-            </div>
-        </header>
+        
+           <div class="mt-12 py-12 px-8 grid grid-cols-5 gap-4 items-center border border-rose-200 rounded-xl">
+
+
+   
+
+    <div class="mt-12 py-12 px-8 grid grid-cols-3 gap-4 items-center">
+        <div class="text-center">
+            
+            <h3 class="mb-4 text-xl text-gray-800">Welcome to REHA Radio</h3>
+
+            <p class="text-gray-500">
+                Pick a radio station to listen
+            </p> 
+        </div>
+
+    </div>
 
         <div class="container py-4">
             <h2 class="mb-4 text-center">🎧 Available Radio Stations</h2>

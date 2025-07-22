@@ -58,9 +58,10 @@
     </style>
   </head>
   <body class="bg-body text-body">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary" style="border-bottom: 2px solid #a2d2ff;">
       <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'home' %}">MyApp</a>
+        <img src="{% static 'img/logos/REHA.jpg' %}" alt="REHA Logo" width="50" height="30" class="me-2" style="background-color: transparent;">
+        <a class="navbar-brand" href="{% url 'home' %}" style="color: #040405ff;">REHA Radio</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -105,7 +106,7 @@
       {% endblock %}
     </main>
 
-    <button id="chat-toggle-btn" class="btn btn-primary rounded-circle shadow"
+    {% comment %} <button id="chat-toggle-btn" class="btn btn-primary rounded-circle shadow"
           style="position: fixed; bottom: 1rem; right: 1rem; font-size: 1.5rem; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
       💬
     </button>
@@ -114,7 +115,7 @@
             style="position: fixed; bottom: 4rem; right: 1rem; width: 350px; height: 500px;
                   border: none; border-radius: 0.75rem; box-shadow: 0 0 10px rgba(0,0,0,0.15);
                   z-index: 1050; display: none;">
-    </iframe>
+    </iframe> {% endcomment %}
 
     <footer class="py-3 bg-dark text-white mt-auto">
       <div class="container text-center">
