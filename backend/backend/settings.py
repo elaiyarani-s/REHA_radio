@@ -82,10 +82,10 @@ TEMPLATES = [
 WSGI_APPLICATION = "backend.wsgi.application"
 
 CHANNEL_LAYERS = {
-    'default': {
-        'BACKEND': 'channels_redis.core.RedisChannelLayer',
-        'CONFIG': {
-            'hosts': [('127.0.0.1', 6379)],
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [os.environ.get("REDIS_URL", "redis://127.0.0.1:6379/1")],
         },
     },
 }
@@ -172,6 +172,6 @@ CORS_ALLOWED_ORIGINS = [
 MEDIA_ROOT = BASE_DIR / "media"
 MEDIA_URL = "media/"
 
-SECURE_SSL_REDIRECT = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = False
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
