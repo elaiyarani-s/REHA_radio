@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "core",
-    "chatbox",
+    "chat",
+
 ]
 
 ASGI_APPLICATION = 'backend.asgi.application'
@@ -81,13 +82,21 @@ TEMPLATES = [
 WSGI_APPLICATION = "backend.wsgi.application"
 
 CHANNEL_LAYERS = {
-    'default': {
-        'BACKEND': 'channels_redis.core.RedisChannelLayer',
-        'CONFIG': {
-            "hosts": [("127.0.0.1", 6379)],
-        },
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer"
     },
 }
+
+# CACHES = {
+#     "default": {
+#         "BACKEND": "django_redis.cache.RedisCache",
+#         "LOCATION": "redis://127.0.0.1:6379/1",  # Redis DB 1
+#         "OPTIONS": {
+#             "CLIENT_CLASS": "django_redis.client.DefaultClient",
+#         }
+#     }
+# }
+
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases

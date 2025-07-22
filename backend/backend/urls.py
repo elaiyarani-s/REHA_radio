@@ -25,7 +25,7 @@ urlpatterns = [
      path('', core_views.home, name='home'),
     path('about/', core_views.about, name='about'),
     path('', include('core.urls')),
-    path('', include('chatbox.urls')),
+    # path('', include('chat.urls')),
    
 ]
 
