@@ -127,6 +127,13 @@
     <script src="{% static 'js/theme.js' %}"></script>
 
     <script>
+      const chatToggleBtn = document.getElementById('chat-toggle-btn');
+      const chatWidget = document.getElementById('chat-widget');
+
+      chatToggleBtn.addEventListener('click', () => {
+        const isVisible = chatWidget.style.display === 'block';
+        chatWidget.style.display = isVisible ? 'none' : 'block';
+      });
       let nickname = localStorage.getItem("nickname");
       if (!nickname) {
         nickname = prompt("Enter a nickname (anonymous):") || "Anonymous";
@@ -174,14 +181,6 @@
           }
         });
     </script>
-    <script>
-      const chatToggleBtn = document.getElementById('chat-toggle-btn');
-      const chatWidget = document.getElementById('chat-widget');
-
-      chatToggleBtn.addEventListener('click', () => {
-        const isVisible = chatWidget.style.display === 'block';
-        chatWidget.style.display = isVisible ? 'none' : 'block';
-      });
-    </script>
+    
   </body>
 </html>
