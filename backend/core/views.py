@@ -8,19 +8,20 @@ def load_stations():
     with open(json_path, 'r', encoding='utf-8') as f:
         return json.load(f)
 
-def station_list_view(request):
-    stations = load_stations()
-    return render(request, 'core/stations_list.html', {'stations': stations})
+# def station_list_view(request):
+#     stations = load_stations()
+#     return render(request, 'core/stations_list.html', {'stations': stations})
 
 def station_detail_view(request, station_id):
     stations = load_stations()
     station = stations.get(str(station_id))
     if not station:
-        return redirect('station_list')
+        return redirect('home')
     return render(request, 'core/station_detail.html', {'station': station})
 
-# def home(request):
-#     return render(request, 'index.html')
+def home(request):
+    stations = load_stations()
+    return render(request, 'index.html',{'stations': stations})
 
 
 def about(request):
