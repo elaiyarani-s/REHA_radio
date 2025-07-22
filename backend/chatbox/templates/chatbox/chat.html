@@ -1,0 +1,30 @@
+<h2>Room: {{ room_name }}</h2>
+
+  <div id="chat-log"></div>
+  <input id="chat-message-input" type="text" autocomplete="off" />
+  <button id="chat-message-submit">Send</button>
+
+  <script>
+    // Ask for username only once
+    let username = localStorage.getItem('username') || prompt("Enter your name:");
+    if (!username) username = "Anonymous";
+    localStorage.setItem('username', username);
+
+    const roomName = "{{ room_name }}";
+    const ws = new WebSocket('ws://' + window.location.host + '/ws/chat/' + roomName + '/');
+
+    ws.onmessage = function(e) {
+      const data = JSON.parse(e.data);
+      document.querySelector('#chat-log').innerHTML += ('<br>' + data.message);
+    };
+
+    document.querySelector('#chat-message-submit').onclick = function() {
+      const input = document.querySelector('#chat-message-input');
+      const message = input.value;
+      ws.send(JSON.stringify({
+        'message': message,
+        'username': username  // Optional for frontend control
+      }));
+      input.value = '';
+    };
+  </script>

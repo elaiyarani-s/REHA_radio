@@ -57,7 +57,8 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="{% url 'stations_list' %}">Stations List</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'stations_list' %}">Stations List</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About us</a></li>
         <li class="nav-item">
           <button id="themeToggle" class="btn btn-outline-light ms-2">🌓</button>
         </li>
@@ -75,7 +76,7 @@
 <iframe id="chat-widget" src="{% url 'chat' %}" title="Chat"></iframe>
 
 <!-- Floating Chat Redirect Button -->
-<a href="{% if user.is_authenticated %}{% url 'chat' %}{% else %}{% url 'lobby' %}{% endif %}" 
+<a href="{% url 'chat' %}" 
    class="btn btn-primary rounded-circle shadow"
    id="chat-toggle-btn"
    style="position: fixed; bottom: 1rem; right: 1rem; z-index: 1060; font-size: 1.5rem; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">

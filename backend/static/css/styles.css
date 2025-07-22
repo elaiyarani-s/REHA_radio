@@ -16,3 +16,16 @@ input, select, textarea {
 .btn {
   transition: background 0.3s, color 0.3s;
 }
+.station-card {
+  max-width: 220px; /* smaller card width */
+  margin: 0 auto;   /* center horizontally if needed */
+  border-radius: 15px; /* smooth rounded corners */
+  overflow: hidden; /* clip child content to border radius */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* optional: subtle shadow */
+}
+
+.station-card img.card-img-top {
+  height: 140px; /* fixed smaller height */
+  object-fit: cover; /* maintain aspect ratio, crop if needed */
+  border-radius: 15px 15px 0 0; /* smooth top corners of image */
+}
