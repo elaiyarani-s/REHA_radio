@@ -105,28 +105,16 @@
       {% endblock %}
     </main>
 
-    <!-- Embedded chat screen iframe from base.html (optional) -->
-    <iframe id="chat-widget" src="{% url 'chat' %}" title="Chat"></iframe>
+    <button id="chat-toggle-btn" class="btn btn-primary rounded-circle shadow"
+          style="position: fixed; bottom: 1rem; right: 1rem; font-size: 1.5rem; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
+      💬
+    </button>
 
-    <!-- Floating Chat Redirect Button -->
-    <a
-      href="{% url 'chat' %}"
-      class="btn btn-primary rounded-circle shadow"
-      id="chat-toggle-btn"
-      style="
-        position: fixed;
-        bottom: 1rem;
-        right: 1rem;
-        z-index: 1060;
-        font-size: 1.5rem;
-        width: 60px;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      "
-      >💬 <i class="bi bi-chat-dots"></i
-    ></a>
+    <iframe id="chat-widget" src="{% url 'chat' %}" title="Chat"
+            style="position: fixed; bottom: 4rem; right: 1rem; width: 350px; height: 500px;
+                  border: none; border-radius: 0.75rem; box-shadow: 0 0 10px rgba(0,0,0,0.15);
+                  z-index: 1050; display: none;">
+    </iframe>
 
     <footer class="py-3 bg-dark text-white mt-auto">
       <div class="container text-center">
@@ -187,6 +175,15 @@
             document.querySelector("#chat-message-submit").click();
           }
         });
+    </script>
+    <script>
+      const chatToggleBtn = document.getElementById('chat-toggle-btn');
+      const chatWidget = document.getElementById('chat-widget');
+
+      chatToggleBtn.addEventListener('click', () => {
+        const isVisible = chatWidget.style.display === 'block';
+        chatWidget.style.display = isVisible ? 'none' : 'block';
+      });
     </script>
   </body>
 </html>

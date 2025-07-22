@@ -1,6 +1,6 @@
-# from django.urls import path
-# from . import views
+from django.urls import path
+from .views import chat_page
 
-# urlpatterns = [
-#     path('', views.chat_home, name='chat_home'),
-# ]
+urlpatterns = [
+    path('', chat_page, name='chat'),  # Enables {% url 'chat' %}
+]
