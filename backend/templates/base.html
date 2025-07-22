@@ -88,7 +88,9 @@
 
     <main class="container py-4">
       {% block content %}
-      <h2 class="mb-4">💬 Public Chat Room</h2>
+     
+      {% endblock %}
+       <h2 class="mb-4">💬 Public Chat Room</h2>
       <div id="chat-log" class="mb-3"></div>
       <div class="input-group mb-5">
         <input
@@ -100,7 +102,6 @@
         />
         <button id="chat-message-submit" class="btn btn-primary">Send</button>
       </div>
-      {% endblock %}
     </main>
 
    <button id="chat-toggle-btn" class="btn btn-primary rounded-circle shadow"
