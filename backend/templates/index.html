@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="mt-12 py-12 px-8 grid grid-cols-5 gap-4 items-center border border-rose-200 rounded-xl">
+
+
+   
+
+    <div class="mt-12 py-12 px-8 grid grid-cols-3 gap-4 items-center">
+        <div class="text-center">
+            
+            <h3 class="mb-4 text-xl text-gray-800">Welcome to REHA Radio</h3>
+
+            <p class="text-gray-500">
+                Pick a radio station to listen
+                <a  href="{% url 'stations_list' %}"><i class="bi bi-boombox-fill"></i>Stations List</a>
+            </p> 
+        </div>
+
+    </div>
+{% endblock %}

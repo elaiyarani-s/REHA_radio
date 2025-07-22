@@ -22,6 +22,7 @@ from core import views as core_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+     path('', core_views.home, name='home'),
     path('about/', core_views.about, name='about'),
     path('', include('core.urls')),
     path('', include('chatbox.urls')),
