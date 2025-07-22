@@ -103,16 +103,21 @@
       {% endblock %}
     </main>
 
-   <button id="chat-toggle-btn" class="btn btn-primary rounded-circle shadow"
-          style="position: fixed; bottom: 1rem; right: 1rem; font-size: 1.5rem; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
-      💬
+    <!-- Toggle Button -->
+    <button id="chat-toggle-btn"
+            class="btn btn-primary rounded-circle"
+            style="position: fixed; bottom: 1rem; right: 1rem; z-index: 1050; width: 60px; height: 60px;">
+        💬
     </button>
 
-    <iframe id="chat-widget" src="{% url 'chat' %}" title="Chat"
-            style="position: fixed; bottom: 4rem; right: 1rem; width: 350px; height: 500px;
-                  border: none; border-radius: 0.75rem; box-shadow: 0 0 10px rgba(0,0,0,0.15);
-                  z-index: 1050; display: none;">
-    </iframe>
+    <!-- Chat Widget Iframe -->
+    <iframe id="chat-widget"
+            src="{% url 'chat' %}"
+            title="Chat"
+            style="position: fixed; bottom: 4.5rem; right: 1rem;
+                  width: 350px; height: 500px; border: none;
+                  border-radius: 0.75rem; box-shadow: 0 0 10px rgba(0,0,0,0.15);
+                  z-index: 1040; display: none;"></iframe>
 
     <footer class="py-3 bg-dark text-white mt-auto">
       <div class="container text-center">
