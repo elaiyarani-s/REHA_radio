@@ -20,8 +20,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
-DEBUG = config('DEBUG', default=False, cast=bool)
-# DEBUG = True
+# DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = True
 
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
