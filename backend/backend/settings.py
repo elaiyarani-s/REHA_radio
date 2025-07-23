@@ -175,3 +175,7 @@ MEDIA_URL = "media/"
 SECURE_SSL_REDIRECT = False
 SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE = False
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://reha-radio.onrender.com",
+]
