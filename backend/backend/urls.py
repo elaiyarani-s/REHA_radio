@@ -18,6 +18,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from core import views as core_views
+from chat.views import AdminChatView
 
 
 urlpatterns = [
@@ -26,7 +27,8 @@ urlpatterns = [
     path('about/', core_views.about, name='about'),
     path('', include('core.urls')),
     path('', include('chat.urls')),
-   
+    path("admin/chat/", AdminChatView.as_view(template_name="admin_chat.html"), name="admin_chat")
+
 ]
 
 

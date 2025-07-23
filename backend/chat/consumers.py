@@ -36,15 +36,17 @@ class ChatConsumer(AsyncWebsocketConsumer):
         color = nickname_to_color(nickname)  # assign color
 
         await self.channel_layer.group_send(
-            self.room_group_name,
+            'admin_group',
             {
-                'type': 'chat_message',
+                'type': 'admin_message',
                 'message': message,
                 'nickname': nickname,
-                'timestamp': timestamp,
-                'color': color,
+                'timestamp': timestamp
             }
         )
+    
+    async def private_message(self, event):
+        await self.send(text_data=json.dumps(event))
 
     def assign_color(self, nickname):
         # Consistent color per nickname using hash
@@ -59,3 +61,32 @@ class ChatConsumer(AsyncWebsocketConsumer):
             'timestamp': event['timestamp'],
             'color': event['color'],
         }))
+
+
+class AdminChatConsumer(AsyncWebsocketConsumer):
+    async def connect(self):
+        self.room_group_name = 'admin_group'
+        await self.channel_layer.group_add(self.room_group_name, self.channel_name)
+        await self.accept()
+
+    async def disconnect(self, code):
+        await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
+
+    async def receive(self, text_data):
+        data = json.loads(text_data)
+        message = data['message']
+        to_nickname = data['to']
+
+        # Send private reply to user
+        await self.channel_layer.group_send(
+            f"user_{to_nickname}",
+            {
+                'type': 'private_message',
+                'message': message,
+                'nickname': 'Admin',
+                'timestamp': datetime.now().strftime('%H:%M:%S'),
+            }
+        )
+
+    async def admin_message(self, event):
+        await self.send(text_data=json.dumps(event))

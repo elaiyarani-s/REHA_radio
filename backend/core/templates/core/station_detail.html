@@ -1,70 +1,37 @@
 {% extends 'base.html' %}
-{% block content %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+{% block title %}{{ station.name }}{% endblock  %}
+{% block content %}
+<div class="container py-5">
+    <div class="card text-center shadow-sm">
+        <div class="card-body">
+            <h2 class="card-title mb-4">{{ station.name }}</h2>
+            {% if station.image_url %}
+            <img src="{{ station.image_url }}" class="img-fluid rounded mb-4 station-detail-img" alt="{{ station.name }}">
+            {% else %}
+            <img src="{% static 'default.avif' %}" class="img-fluid rounded mb-4 station-detail-img" alt="{{ station.name }}">
+            {% endif %}
+            <p class="text-muted" id="now-playing-label">🎵 Loading...</p>
+            <audio id="audioPlayer" controls class="w-100 mb-3" controls autoplay>
+                <source src="{{ station.audio_url }}" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <p id="stream-title" class="text-info"></p>
 
-        <title>{{ station.name }}</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    </head>
-    <body>
-        <header class="bg-light py-3 mb-4" style="border-bottom: 2px solid #a2d2ff;">
-            <div class="container d-flex justify-content-between align-items-center">
-                <a href="{% url 'home' %}" class="d-flex align-items-center text-decoration-none">
-                <img src="{% static 'img/logos/REHA.jpg' %}" alt="REHA Logo" width="50" height="30" class="me-2" style="background-color: transparent;">
-                <span class="h5 mb-0" style="color: #040405ff;">REHA Radio</span>
-                </a>
+            {% if error %}
+            <div class="alert alert-danger">
+                {{ error }}
             </div>
-        </header>
-        <div class="container py-5">
-            <div class="card text-center shadow-sm">
-                <div class="card-body">
-                    <h2 class="card-title mb-4">{{ station.name }}</h2>
-                    {% if station.image_url %}
-                    <img src="{{ station.image_url }}" class="img-fluid rounded mb-4 station-detail-img" alt="{{ station.name }}">
-                    {% else %}
-                    <img src="{% static 'default.avif' %}" class="img-fluid rounded mb-4 station-detail-img" alt="{{ station.name }}">
-                    {% endif %}
-                    <p class="text-muted" id="now-playing-label">🎵 Loading...</p>
-                    <audio id="audioPlayer" controls class="w-100 mb-3" controls autoplay>
-                        <source src="{{ station.audio_url }}" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                    <p id="stream-title" class="text-info"></p>
+            {% endif %}
 
-                    {% if error %}
-                        <div class="alert alert-danger">
-                            {{ error }}
-                        </div>
-                    {% endif %}
-
-                    <a href="{% url 'home' %}" class="btn btn-outline-primary mt-3">← Back to Stations</a>
-                </div>
-            </div>
+            <a href="{% url 'home' %}" class="btn btn-outline-primary mt-3">← Back to Stations</a>
         </div>
-
-        <footer class="bg-light text-center py-4 mt-5" style="border-top: 2px solid #a2d2ff;">
-        <div class="container">
-            <p class="mb-1" style="color: #3a8dde;">&copy; 2025 REHA Online Radio</p>
-            <p>
-            <a href="#" class="text-decoration-none me-3" style="color: #3a8dde;">Facebook</a>
-            <a href="#" class="text-decoration-none me-3" style="color: #3a8dde;">Twitter</a>
-            <a href="#" class="text-decoration-none" style="color: #3a8dde;">Instagram</a>
-            </p>
-        </div>
-        </footer>
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-        <script>
-            const streamUrl = "{{ station.audio_url }}";
-            const stationName = "{{ station.name }}";
-        </script>
-        <script src="{% static 'js/player.js' %}"></script>
-    </body>
-</html>
-
-{% endblock %}
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    const streamUrl = "{{ station.audio_url }}";
+    const stationName = "{{ station.name }}";
+</script>
+<script src="{% static 'js/player.js' %}"></script>
+{% endblock  %}

@@ -35,15 +35,24 @@
     const chatSocket = new WebSocket(protocol + '://' + window.location.host + '/ws/chat/');
 
     chatSocket.onmessage = function(e) {
-      const data = JSON.parse(e.data);
-      const chatLog = document.querySelector('#chat-log');
-      chatLog.innerHTML += `
-        <div>
-          <small class="text-muted">[${data.timestamp}]</small> 
-          <strong style="color:${data.color};">${data.nickname}</strong>: 
-          <span>${data.message}</span>
-        </div>`;
-      chatLog.scrollTop = chatLog.scrollHeight;
+        const data = JSON.parse(e.data);
+        const chatLog = document.querySelector('#chat-log');
+        
+        chatLog.innerHTML += `
+            <div class="mb-1">
+                <small class="text-muted">[${data.timestamp}]</small> 
+                <strong style="color:${data.color};">${data.nickname}</strong>: 
+                <span>${data.message}</span>
+            </div>`;
+        chatLog.scrollTop = chatLog.scrollHeight;
+
+        // ✅ Show a browser notification (if permitted)
+        if (Notification.permission === "granted" && document.hidden) {
+            new Notification(`${data.nickname} says:`, {
+                body: data.message,
+                icon: "/static/img/chat-icon.png"  // Optional: custom icon
+            });
+        }
     };
 
     document.querySelector('#chat-message-submit').onclick = function() {
