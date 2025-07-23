@@ -1,35 +1,58 @@
 {% extends "base.html" %}
 {% block content %}
-<h3>📨 Admin Chat Interface</h3>
-<div id="messages" class="border p-3 mb-3" style="height:300px; overflow-y:auto;"></div>
+<div class="container py-4">
+  <h3 class="mb-4 text-center">📨 Admin Chat Interface</h3>
 
-<div class="mb-2">
-    <input type="text" id="admin-to" class="form-control mb-2" placeholder="Reply to (nickname)">
-    <input type="text" id="admin-message" class="form-control" placeholder="Type reply message">
-    <button id="send-admin" class="btn btn-success mt-2">Send Reply</button>
+  <div id="messages"
+       class="border p-3 mb-3 bg-white rounded"
+       style="height: 350px; overflow-y: auto;">
+  </div>
+
+  <div class="row g-2">
+    <div class="col-12 col-md-6">
+      <input type="text" id="admin-to"
+             class="form-control"
+             placeholder="Reply to (nickname)">
+    </div>
+    <div class="col-12 col-md-6">
+      <input type="text" id="admin-message"
+             class="form-control"
+             placeholder="Type reply message">
+    </div>
+    <div class="col-12 text-end">
+      <button id="send-admin"
+              class="btn btn-success mt-2 w-100 w-md-auto">
+        Send Reply
+      </button>
+    </div>
+  </div>
 </div>
 
 <script>
-    const adminSocket = new WebSocket('wss://' + window.location.host + '/ws/admin/');
+  const adminSocket = new WebSocket('wss://' + window.location.host + '/ws/admin/');
 
-    adminSocket.onmessage = function(e) {
-        const data = JSON.parse(e.data);
-        document.getElementById("messages").innerHTML += `
-            <div><strong>${data.nickname}</strong>: ${data.message} <span class="text-muted">[${data.timestamp}]</span></div>
-        `;
-    };
+  adminSocket.onmessage = function(e) {
+    const data = JSON.parse(e.data);
+    const messagesDiv = document.getElementById("messages");
+    messagesDiv.innerHTML += `
+      <div class="mb-1">
+        <strong>${data.nickname}</strong>: ${data.message}
+        <span class="text-muted">[${data.timestamp}]</span>
+      </div>`;
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+  };
 
-    document.getElementById("send-admin").onclick = function() {
-        const to = document.getElementById("admin-to").value.trim();
-        const message = document.getElementById("admin-message").value.trim();
+  document.getElementById("send-admin").onclick = function() {
+    const to = document.getElementById("admin-to").value.trim();
+    const message = document.getElementById("admin-message").value.trim();
 
-        if (to && message) {
-            adminSocket.send(JSON.stringify({
-                'to': to,
-                'message': message
-            }));
-            document.getElementById("admin-message").value = '';
-        }
-    };
+    if (to && message) {
+      adminSocket.send(JSON.stringify({
+        'to': to,
+        'message': message
+      }));
+      document.getElementById("admin-message").value = '';
+    }
+  };
 </script>
 {% endblock %}
