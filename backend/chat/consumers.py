@@ -33,8 +33,9 @@ class ChatConsumer(AsyncWebsocketConsumer):
         message = data['message']
         nickname = data.get('nickname', 'Anonymous')
         timestamp = datetime.now().strftime('%H:%M:%S')
-        color = nickname_to_color(nickname)  # assign color
+        color = nickname_to_color(nickname)
 
+        # Send to admin
         await self.channel_layer.group_send(
             'admin_group',
             {
@@ -44,6 +45,19 @@ class ChatConsumer(AsyncWebsocketConsumer):
                 'timestamp': timestamp
             }
         )
+
+        # Send back to public chat group
+        await self.channel_layer.group_send(
+            self.room_group_name,
+            {
+                'type': 'chat_message',
+                'message': message,
+                'nickname': nickname,
+                'timestamp': timestamp,
+                'color': color
+            }
+        )
+
     
     async def private_message(self, event):
         await self.send(text_data=json.dumps(event))
