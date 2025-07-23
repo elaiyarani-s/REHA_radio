@@ -26,7 +26,7 @@ input, select, textarea {
 
 .station-card img.card-img-top {
   height: 140px; /* fixed smaller height */
-  object-fit: cover; /* maintain aspect ratio, crop if needed */
+  object-fit: contain; /* maintain aspect ratio, crop if needed */
   border-radius: 15px 15px 0 0; /* smooth top corners of image */
 }
 @media (max-width: 576px) {

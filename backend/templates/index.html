@@ -14,7 +14,7 @@
     <div class="row g-4">
         {% for key, station in stations.items %}
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card h-100 shadow-sm">
+                <div class="card h-100 shadow-sm station-card">
                     <img src="{{ station.image_url }}" class="card-img-top" alt="{{ station.name }}">
                     <div class="card-body text-center">
                         <a href="{% url 'station_detail' key %}" class="text-decoration-none fw-semibold text-primary">
