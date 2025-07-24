@@ -25,7 +25,7 @@
   },
   "5": {
     "name": "FM Rainbow",
-    "audio_url": "https://air.pc.cdn.bitgravity.com/air/live/pbaudio022/media_114203.ts",
+    "audio_url": "https://air.pc.cdn.bitgravity.com/air/live/pbaudio022/playlist.m3u8",
     "image_url": "/static/img/logos/fmrainbow.jpg",
     "error_message": ""
   },
@@ -43,7 +43,7 @@
   },
   "8": {
     "name": "Lanka Sri FM",
-    "audio_url": "https://rbx2.hnux.com/http://5984.cloudrad.io:8032/;stream.mp3",
+    "audio_url": "http://media2.lankasri.fm/;stream.mp3",
     "image_url": "/static/img/logos/lankasri.png",
     "error_message": ""
   },
@@ -96,9 +96,9 @@
     "error_message": ""
   },
   "17": {
-    "name": "Star FM",
-    "audio_url": "http://s8.voscast.com:8670",
-    "image_url": "/static/img/logos/star.jpg",
+    "name": "80’s Tamil Hits",
+    "audio_url": "https://stream.zeno.fm/48w230kx8vzuv.aac",
+    "image_url": "/static/img/logos/80TamilHits.jpg",
     "error_message": ""
   },
   "18": {

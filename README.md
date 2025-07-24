@@ -128,13 +128,6 @@ CHANNEL_LAYERS = {
 
 ---
 
-## 👩‍💻 Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
----
-
-
 ## ✨ Credits
 
 Developed by [@elaiyarani-s](https://github.com/elaiyarani-s).
