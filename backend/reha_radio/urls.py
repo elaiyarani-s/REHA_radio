@@ -27,7 +27,7 @@ urlpatterns = [
     path('about/', core_views.about, name='about'),
     path('', include('core.urls')),
     path('', include('chat.urls')),
-    path("admin/chat/", AdminChatView.as_view(template_name="admin_chat.html"), name="admin_chat")
+    path("chat/", AdminChatView.as_view(template_name="admin_chat.html"), name="admin_chat")
 
 ]
 
