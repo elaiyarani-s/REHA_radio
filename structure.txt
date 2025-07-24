@@ -1,12 +1,6 @@
 .
-└── backend
+└── reha_radio
     ├── Procfile
-    ├── backend
-    │   ├── __init__.py
-    │   ├── asgi.py
-    │   ├── settings.py
-    │   ├── urls.py
-    │   └── wsgi.py
     ├── chat
     │   ├── __init__.py
     │   ├── admin.py
@@ -33,6 +27,12 @@
     │   ├── urls.py
     │   └── views.py
     ├── manage.py
+    ├── reha_radio
+    │   ├── __init__.py
+    │   ├── asgi.py
+    │   ├── settings.py
+    │   ├── urls.py
+    │   └── wsgi.py
     ├── static
     │   ├── css
     │   │   └── styles.css

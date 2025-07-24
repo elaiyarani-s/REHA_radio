@@ -101,14 +101,14 @@ CHANNEL_LAYERS = {
 
 ```bash
 .
-└── backend
+└── reha_radio
     ├── Procfile
-    ├── backend  # Django project settings
     ├── chat    # Chat app logic
     ├── core    # Main app logic
     ├── manage.py
+    ├── reha_radio  # Django project settings
     ├── static
-    └── templates
+    ├── templates
     └── requirements.txt
 
 ```
