@@ -9,9 +9,7 @@ A real-time Django-based radio streaming and communication platform built with D
 - ✅ Django 5.x with ASGI support
 - 📡 Real-time communication using **WebSockets** via **Django Channels**
 - 🔄 Live browser reload during development
-- 🔐 JWT-based authentication
 - 🔗 CORS support for frontend-backend integration
-- 📦 PostgreSQL database integration
 - 🌐 RESTful API using Django REST Framework
 - 🧹 Auto file cleanup with WhiteNoise static files support
 
@@ -22,7 +20,6 @@ A real-time Django-based radio streaming and communication platform built with D
 - **Backend**: Django, Django REST Framework, Channels, Daphne
 - **Real-time**: Channels + Redis + Daphne (ASGI server)
 - **Database**: PostgreSQL (via `psycopg2-binary`)
-- **Authentication**: JWT (using `PyJWT`)
 - **Deployment**: Render / Docker-ready
 - **Static Handling**: WhiteNoise
 - **Dev Tools**: `django-browser-reload`, `python-decouple`
