@@ -19,7 +19,6 @@ A real-time Django-based radio streaming and communication platform built with D
 
 - **Backend**: Django, Django REST Framework, Channels, Daphne
 - **Real-time**: Channels + Redis + Daphne (ASGI server)
-- **Database**: PostgreSQL (via `psycopg2-binary`)
 - **Deployment**: Render / Docker-ready
 - **Static Handling**: WhiteNoise
 - **Dev Tools**: `django-browser-reload`, `python-decouple`
